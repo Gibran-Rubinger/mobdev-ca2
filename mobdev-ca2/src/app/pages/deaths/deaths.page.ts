@@ -15,9 +15,10 @@ deaths: Observable<any>;
 
   ngOnInit() {
       this.deaths = this.api.getDeaths();
+      /* NO NEXT PAGE
       this.deaths.subscribe(data => {
          console.log('my deaths: ',data);
-     })
+     })*/ 
   }
 }
 
