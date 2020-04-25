@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-list>
-    <!-- *ngFor angular loop-->
+    <!-- *ngFor angular loop | !!! call the fuction openDetails at the page.ts file-->
         <ion-item button detail lines="inset" *ngFor="let episode of 
         episodes | async" (click)="openDetails(episode)">
         {{ episode?.title }}
