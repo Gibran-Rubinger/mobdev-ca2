@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage'; // call Ionic storage
+//npm i -g cordova
+//ionic cordova plugin add cordova-sqlite-storage
+//npm install @ionic/storage (other wise when we import {Storage} will not be recognise)
  
 const STORAGE_KEY = 'favouriteEpisodes';
  

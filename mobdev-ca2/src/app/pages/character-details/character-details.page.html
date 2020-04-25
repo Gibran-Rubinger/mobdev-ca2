@@ -1,13 +1,42 @@
 <ion-header>
 	<ion-toolbar color="primary">
-		<ion-title>Characters</ion-title>
-		<ion-back-button></ion-back-button>
+		<ion-buttons slot="start" defaulthref="/tabs/episodes">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Character Details</ion-title>
 	</ion-toolbar>
 </ion-header>
-<ion-content>
-	<ion-list>
-		<ion-item button detail lines="inset" *ngFor="let character of characters | async"
-			(click)="openDetails(character)">
-        </ion-item>
-	</ion-list>
+<ion-content padding>
+
+	<ion-card *ngIf="character">
+		
+		
+			<ion-card-header color="primary"> {{ character.name }}</ion-card-header>
+            
+			<p align="center"><img [src]="character.img" width="180" height="180" class="info-img"></p>
+            
+            <ion-item class="movie-info" lines="none">
+				<ion-icon name="person-add" slot="start"></ion-icon>
+				Nickname: {{ character.nickname }}
+			</ion-item>
+            
+            
+            <ion-item class="movie-info" lines="none">
+				<ion-icon name="construct" slot="start"></ion-icon>
+				Occupation: {{ character.occupation }}
+			</ion-item>			
+
+            
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="battery-half" slot="start"></ion-icon>
+				Status: {{ character.status }}
+			</ion-item>
+            
+			<ion-item class="movie-info" lines="none">
+				<ion-icon name="tv" slot="start"></ion-icon>
+				Season: {{ character.appearance}}
+			</ion-item>
+
+		
+	</ion-card>
 </ion-content>
