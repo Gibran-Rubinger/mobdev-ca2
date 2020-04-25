@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabsPage } from './tabs.page';
 const routes: Routes = [
-    // create the paths for all the pages that we have introduced the children, array[]... import the pages in the order 
+    // create the paths for all the pages that we have... introduced the loadchildren, array[]... import the pages in the order 
     //  that it will show in the app
     {
         path: 'tabs',
