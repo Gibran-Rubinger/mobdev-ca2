@@ -16,10 +16,11 @@ export class EpisodesPage implements OnInit {
 
 }
 */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs'; //to see episodes
 import { ApiService } from '../../services/api.service'; //imported Api service that we created earlier
+import { IonInfiniteScroll } from '@ionic/angular';
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.page.html',
@@ -40,5 +41,15 @@ export class EpisodesPage implements OnInit {
       let episodeId = episode.episode_id;  
         this.router.navigateByUrl(`/tabs/episodes/${episodeId}`);
     
+    }
+loadData(event) {
+        setTimeout(() => {
+            console.log('Done');
+            event.target.complete();
+
+            if (this.api.getQuote.length == 1000) {
+                event.target.disabled = true;
+            }
+        }, 500);
     }
 }

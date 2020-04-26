@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from '../../services/api.service';
+import { IonInfiniteScroll } from '@ionic/angular';
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.page.html',
@@ -26,4 +27,14 @@ export class CharactersPage implements OnInit {
     console.log('my charactersDetails :' ,characterId);
     }
 
+loadData(event) {
+        setTimeout(() => {
+            console.log('Done');
+            event.target.complete();
+
+            if (this.api.getQuote.length == 1000) {
+                event.target.disabled = true;
+            }
+        }, 500);
+    }
 }
