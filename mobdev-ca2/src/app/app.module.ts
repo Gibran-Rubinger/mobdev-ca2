@@ -15,12 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 //import for the favourite fuction
 import { IonicStorageModule } from '@ionic/storage';
 //import for the Infinite Scroll fuction
-import { IonInfiniteScroll } from '@ionic/angular';
+import { InfiniteScrollModule} from 'ngx-infinite-scroll';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   //do never forget to declare your imports here as well
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,IonicStorageModule,IonicStorageModule.forRoot(),IonInfiniteScroll],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,IonicStorageModule,IonicStorageModule.forRoot(),InfiniteScrollModule],
   providers: [
     StatusBar,
     SplashScreen,
