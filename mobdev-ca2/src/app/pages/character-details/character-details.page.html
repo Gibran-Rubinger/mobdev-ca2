@@ -4,6 +4,16 @@
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
 		<ion-title>Character Details</ion-title>
+        
+			 <ion-buttons slot="end">
+                <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavouriteCharacters">
+                <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+                 </ion-button>
+                <ion-button (click)="favouriteCharacter()" *ngIf="!isFavouriteCharacters">
+                 <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+                </ion-button>
+             </ion-buttons>
+           
 	</ion-toolbar>
 </ion-header>
 <ion-content padding>
